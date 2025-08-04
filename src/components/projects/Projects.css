@@ -1,0 +1,16 @@
+.card1 {
+    will-change: transform;
+    opacity: 1;
+    transform: rotate(3deg);
+    user-select: none;
+    touch-action: none;
+}
+
+.card2 {
+    top: 3.75rem;
+    /* top-15 */
+    left: 50%;
+    /* left-[50%] */
+    transform: rotate(-7deg);
+    position: absolute;
+}

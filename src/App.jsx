@@ -30,7 +30,7 @@ export default function App() {
           <Skills />
         </div>
         <div className="py-6">
-          
+          <Projects />
         </div>
       </div>
     </ThemeProvider>
