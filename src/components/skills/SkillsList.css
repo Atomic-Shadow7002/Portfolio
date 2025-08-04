@@ -1,0 +1,46 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 20s linear infinite;
+}
+
+.mask-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Curve inward from left */
+.curve-left {
+  transform: perspective(1000px) rotateY(10deg) scaleY(0.92);
+  will-change: transform;
+}
+
+/* Curve inward from right */
+.curve-right {
+  transform: perspective(1000px) rotateY(-10deg) scaleY(0.92);
+  will-change: transform;
+}

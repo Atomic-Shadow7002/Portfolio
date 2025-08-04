@@ -1,0 +1,38 @@
+.nav-container {
+    min-width: 800px;
+    transform: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.name {
+    opacity: 1;
+    transform: none;
+    font-weight: 700;
+}
+
+.btn-theme {
+    border-radius: 10px;
+    object-fit: contain;
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-theme:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.btn-theme:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Optional hover effect */
+.btn-theme:hover {
+    background-color: rgba(202, 199, 199, 0.1);
+}
