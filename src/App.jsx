@@ -7,13 +7,14 @@ import User from "./components/user/User"
 import Education from "./components/education/Education"
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
+import Connect from "./components/connect/Connect";
 
 export default function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen w-screen bg-white dark:bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
         <div className="relative w-full z-10">
-          <Navbar/>
+          <Navbar />
         </div>
         <div className="relative flex md:min-h-screen w-full py-4 md:pt-12 justify-center bg-transparent overflow-hidden px-6">
           <section className="relative flex md:min-h-screen w-full justify-center bg-transparent overflow-hidden px-6">
@@ -31,6 +32,12 @@ export default function App() {
         </div>
         <div className="py-6">
           <Projects />
+        </div>
+        <div className="relative w-full max-w-6xl mx-auto overflow-clip">
+          
+        </div>
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden font-mono">
+          <Connect />
         </div>
       </div>
     </ThemeProvider>
