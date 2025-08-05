@@ -1,0 +1,20 @@
+@layer utilities {
+  @keyframes scrollPulse {
+    0% {
+      transform: translateY(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateY(2000px);
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.2;
+    }
+  }
+
+  .animate-scrollPulse {
+    animation: scrollPulse 3s ease-in-out infinite;
+  }
+}

@@ -8,6 +8,7 @@ import Education from "./components/education/Education"
 import Skills from "./components/skills/Skills";
 import Projects from "./components/projects/Projects";
 import Connect from "./components/connect/Connect";
+import Journey from "./components/journey/Journey";
 
 export default function App() {
   return (
@@ -34,7 +35,7 @@ export default function App() {
           <Projects />
         </div>
         <div className="relative w-full max-w-6xl mx-auto overflow-clip">
-          
+          <Journey />
         </div>
         <div className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden font-mono">
           <Connect />
