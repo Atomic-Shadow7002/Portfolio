@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky inset-x-0 top-20 z-40 w-full">
-      <div className="nav-container relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent">
+      <div className="nav-container relative z-[60] mx-auto flex w-full max-w-6xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 dark:bg-transparent">
         <h1 className="name text-2xl font-medium font-mono text-black dark:text-white">Abhishek</h1>
         <button
           onClick={() => setIsDark(!isDark)}
