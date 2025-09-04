@@ -17,8 +17,8 @@ export default function App() {
         <div className="relative w-full z-10">
           <Navbar />
         </div>
-        <div className="relative flex md:min-h-screen w-full py-4 md:pt-12 justify-center bg-transparent overflow-hidden px-6">
-          <section className="relative flex md:min-h-screen w-full justify-center bg-transparent overflow-hidden px-6">
+        <div className="" style={{opacity:1, transform: "none"}}>
+          <section className="relative flex md:min-h-screen w-full justify-center bg-transparent overflow-hidden px-6 py-6">
 
             <div className="absolute inset-0 z-0 opacity-80 [background-size:80px_80px] [background-image:linear-gradient(to_right,#e4e4e7_0.5px,transparent_0.5px),linear-gradient(to_bottom,#e4e4e7_0.5px,transparent_0.5px)] dark:[background-image:linear-gradient(to_right,#262626_0.5px,transparent_0.5px),linear-gradient(to_bottom,#262626_0.5px,transparent_0.5px)]"></div>
             <div className="pointer-events-none absolute inset-0 bg-transparent [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>

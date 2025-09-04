@@ -8,7 +8,8 @@ import Demo from "../../assets/Demo.png";
 
 function generateScrollValues(count, heightStart = 0, heightStep = 120, maxOpacity = 1) {
     const heights = Array.from({ length: count }, (_, i) => heightStart + i * heightStep);
-    const opacities = Array.from({ length: count }, (_, i) => Math.min(i / (count * 0.3), maxOpacity));
+    // Changed: Set all opacity values to maxOpacity (1) so it's 100% from first scroll
+    const opacities = Array.from({ length: count }, () => maxOpacity);
     const progress = heights.map((_, i) => i / (count - 1));
     return { heights, opacities, progress };
 }
@@ -51,13 +52,21 @@ export default function Journey() {
     const TimelineSection = ({ year, text, images, points = [] }) => {
         const sectionRef = useRef(null);
         const isInView = useInView(sectionRef, { margin: "-30%" });
+        const [hasBeenInView, setHasBeenInView] = useState(false);
+
+        // Once an element has been in view, keep it visible
+        React.useEffect(() => {
+            if (isInView) {
+                setHasBeenInView(true);
+            }
+        }, [isInView]);
 
         return (
             <motion.div 
                 className="flex justify-start pt-10 md:pt-40 md:gap-10" 
                 ref={sectionRef}
                 initial={{ opacity: 0, y: 50 }}
-                animate={isInView 
+                animate={hasBeenInView 
                     ? { opacity: 1, y: 0 } 
                     : { opacity: 0, y: -30 }
                 }
@@ -72,13 +81,13 @@ export default function Journey() {
                     <motion.div 
                         className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center"
                         initial={{ scale: 0 }}
-                        animate={isInView 
+                        animate={hasBeenInView 
                             ? { scale: 1, rotate: 0 } 
                             : { scale: 0.3, rotate: -180 }
                         }
                         transition={{ 
                             duration: 0.45, 
-                            delay: isInView ? 0.18 : 0,
+                            delay: hasBeenInView ? 0.18 : 0,
                             ease: "easeOut"
                         }}
                     >
@@ -87,13 +96,13 @@ export default function Journey() {
                     <motion.h3 
                         className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold transition-colors duration-300 text-neutral-800 dark:text-neutral-500"
                         initial={{ opacity: 0, x: -20 }}
-                        animate={isInView 
+                        animate={hasBeenInView 
                             ? { opacity: 1, x: 0 } 
                             : { opacity: 0.3, x: 20 }
                         }
                         transition={{ 
                             duration: 0.45, 
-                            delay: isInView ? 0.27 : 0.09,
+                            delay: hasBeenInView ? 0.27 : 0.09,
                             ease: "easeOut"
                         }}
                     >
@@ -104,13 +113,13 @@ export default function Journey() {
                     <motion.h3 
                         className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-800 dark:text-neutral-500"
                         initial={{ opacity: 0, x: -20 }}
-                        animate={isInView 
+                        animate={hasBeenInView 
                             ? { opacity: 1, x: 0 } 
                             : { opacity: 0.3, x: 20 }
                         }
                         transition={{ 
                             duration: 0.45, 
-                            delay: isInView ? 0.27 : 0.09,
+                            delay: hasBeenInView ? 0.27 : 0.09,
                             ease: "easeOut"
                         }}
                     >
@@ -120,7 +129,7 @@ export default function Journey() {
                         <motion.p 
                             className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200"
                             initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                            animate={hasBeenInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.45, delay: 0.36 }}
                         >
                             {text}
@@ -129,7 +138,7 @@ export default function Journey() {
                             <motion.div 
                                 className="space-y-2"
                                 initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                animate={hasBeenInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.54, delay: 0.45 }}
                             >
                                 {points.map((point, idx) => (
@@ -137,7 +146,7 @@ export default function Journey() {
                                         key={idx} 
                                         className="flex items-center gap-2 text-xs md:text-sm text-neutral-700 dark:text-neutral-300"
                                         initial={{ opacity: 0, x: -10 }}
-                                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                                        animate={hasBeenInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                                         transition={{ duration: 0.36, delay: 0.54 + idx * 0.09 }}
                                     >
                                         ✅ {point}
@@ -149,7 +158,7 @@ export default function Journey() {
                             <motion.div 
                                 className="grid grid-cols-2 gap-4 mt-4"
                                 initial={{ opacity: 0, y: 30 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                animate={hasBeenInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                                 transition={{ duration: 0.63, delay: 0.63 }}
                             >
                                 {images.map((img, idx) => (
@@ -159,7 +168,7 @@ export default function Journey() {
                                         alt="" 
                                         className="h-20 w-full rounded-lg object-contain shadow-md md:h-44 lg:h-60"
                                         initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                                        animate={hasBeenInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.45, delay: 0.72 + idx * 0.09 }}
                                     />
                                 ))}

@@ -1,18 +1,138 @@
-
 .blinking-cursor {
-    animation: blink 1.3s infinite;
-    font-style: italic;
-    font-weight: bold;
-    transform: skewX(-10deg);
-    display: inline-block;
-    font-family: monospace;
+    animation: blink 1s infinite;
+    animation-timing-function: step-end;
+}
+
+.loading-gradient {
+    background: linear-gradient(-45deg, #3b83f6ae, #8a5cf6bb, #06b5d4af, #3b83f6c1);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+}
+
+.loading-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+.initial-fade-in {
+    animation: initialFadeIn 1.2s ease-out forwards;
+}
+
+.initial-slide-up {
+    animation: initialSlideUp 0.8s ease-out forwards;
+}
+
+.initial-scale-in {
+    animation: initialScaleIn 0.6s ease-out forwards;
+}
+
+.initial-slide-in-left {
+    animation: initialSlideInLeft 0.7s ease-out forwards;
+}
+
+.initial-slide-in-right {
+    animation: initialSlideInRight 0.7s ease-out forwards;
+}
+
+@keyframes initialFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes initialSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes initialScaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes initialSlideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes initialSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes blink {
-    0%, 50% {
+
+    0%,
+    50% {
         opacity: 1;
     }
-    51%, 100% {
+
+    51%,
+    100% {
         opacity: 0;
+    }
+}
+
+@keyframes subtle-bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-3px);
+    }
+}
+
+.animate-subtle-bounce {
+    animation: subtle-bounce 1.4s infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }

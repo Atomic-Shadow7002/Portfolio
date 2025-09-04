@@ -15,10 +15,10 @@ export default function Connect() {
             </div>
             <div className="text-center z-10 max-w-4xl mx-auto" style={{ opacity: 1, transform: "none" }}>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-16 tracking-wide" style={{ opacity: 1, transform: "none" }}>
-                    <span>Let's </span>
+                    <span className="dark:text-white text-black">Let's </span>
                     <span className="text-emerald-400">Talk</span>
                 </h1>
-                <p className="text-lg md:text-xl lg:text-2xl mb-16 max-w-3xl mx-auto leading-relaxed font-light" style={{ opacity: 1, transform: "none" }}>
+                <p className="dark:text-white text-black text-lg md:text-xl lg:text-2xl mb-16 max-w-3xl mx-auto leading-relaxed font-light" style={{ opacity: 1, transform: "none" }}>
                     What led you here? What are you looking for? I would love to hear from you over a virtual coffee chat!
                 </p>
                 <div className="flex flex-col items-center space-y-8 mb-16" style={{ opacity: 1, transform: "none" }}>
@@ -32,7 +32,7 @@ export default function Connect() {
                 </div>
             </div>
             <div className="absolute bottom-8 left-8 right-8 flex justify-between items-center z-10" style={{ opacity: 1, transform: "none" }}>
-                <div className="text-lg font-medium">Abhishek Kumar Ray</div>
+                <div className="dark:text-white text-black text-lg font-medium">Abhishek Kumar Ray</div>
                 <div className="flex space-x-4">
                     <a href="" className="text-emerald-400 hover:text-white transition-colors duration-300 p-2 rounded-full border border-emerald-400 hover:border-white">
                         <FooterFacebookIcon />

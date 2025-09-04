@@ -1,6 +1,6 @@
 /* Profile Photo Animation Styles */
 .profile-photo-container {
-  animation: smoothFloat 8s linear infinite;
+  animation: smoothFloatWithRotation 8s linear infinite;
   position: relative;
 }
 
@@ -12,25 +12,25 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-/* Smooth continuous floating animation */
-@keyframes smoothFloat {
+/* Smooth continuous floating animation with subtle rotation */
+@keyframes smoothFloatWithRotation {
   0% {
     transform: scale(1) rotate(0deg) translateY(0px);
   }
   16.66% {
-    transform: scale(1.01) rotate(0.3deg) translateY(-2px);
+    transform: scale(1.01) rotate(1deg) translateY(-2px);
   }
   33.33% {
-    transform: scale(1.025) rotate(0.6deg) translateY(-3px);
+    transform: scale(1.025) rotate(2deg) translateY(-3px);
   }
   50% {
-    transform: scale(1.04) rotate(0deg) translateY(-4px);
+    transform: scale(1.04) rotate(3deg) translateY(-4px);
   }
   66.66% {
-    transform: scale(1.025) rotate(-0.6deg) translateY(-3px);
+    transform: scale(1.025) rotate(2deg) translateY(-3px);
   }
   83.33% {
-    transform: scale(1.01) rotate(-0.3deg) translateY(-2px);
+    transform: scale(1.01) rotate(1deg) translateY(-2px);
   }
   100% {
     transform: scale(1) rotate(0deg) translateY(0px);
@@ -146,4 +146,3 @@
   transform: rotateX(8deg) rotateY(-8deg) translateZ(60px) scale(1.05);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
 }
-
